@@ -6,12 +6,12 @@ This is a multi-vendor e-commerce platform built with Next.js and TypeScript.
 
 1. Install dependencies:
 ```bash
-npm install
+bun install
 ```
 
 2. Run the development server:
 ```bash
-npm run dev
+bun run dev
 ```
 
 3. Open [http://localhost:3000](http://localhost:3000) in your browser.
