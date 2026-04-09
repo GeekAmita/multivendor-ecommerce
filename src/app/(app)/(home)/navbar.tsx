@@ -50,22 +50,12 @@ export const Navbar = () => {
   return (
     <nav className="flex h-20 justify-between border-b bg-white font-medium">
       <Link href="/" className="flex items-center pl-6">
-        <span className={cn("text-5xl font-semibold", poppins.className)}>
-          vendre
-        </span>
+        <span className={cn("text-5xl font-semibold", poppins.className)}>vendre</span>
       </Link>
-      <NavbarSidebar
-        items={navbarItems}
-        open={isSidebarOpen}
-        onOpenChange={setIsSidebarOpen}
-      />
+      <NavbarSidebar items={navbarItems} open={isSidebarOpen} onOpenChange={setIsSidebarOpen} />
       <div className="hidden items-center gap-4 lg:flex">
         {navbarItems.map((item) => (
-          <NavbarItem
-            key={item.href}
-            href={item.href}
-            isActive={pathname === item.href}
-          >
+          <NavbarItem key={item.href} href={item.href} isActive={pathname === item.href}>
             {item.children}
           </NavbarItem>
         ))}

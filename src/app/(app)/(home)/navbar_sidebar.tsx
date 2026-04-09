@@ -1,9 +1,4 @@
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import Link from "next/link";
 
@@ -18,11 +13,7 @@ interface NavbarSidebarProps {
   onOpenChange: (open: boolean) => void;
 }
 
-export const NavbarSidebar = ({
-  items,
-  open,
-  onOpenChange,
-}: NavbarSidebarProps) => {
+export const NavbarSidebar = ({ items, open, onOpenChange }: NavbarSidebarProps) => {
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent side="left" className="p-0 transition-none">

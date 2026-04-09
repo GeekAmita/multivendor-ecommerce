@@ -14,11 +14,7 @@ interface CategoryDropdownProps {
   isNavigationHovered?: boolean;
 }
 
-export const CategoryDropdown = ({
-  category,
-  isActive,
-  isNavigationHovered,
-}: CategoryDropdownProps) => {
+export const CategoryDropdown = ({ category, isActive, isNavigationHovered }: CategoryDropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const { getDropdownPosition } = useDropdownPosition(dropdownRef);
@@ -57,9 +53,7 @@ export const CategoryDropdown = ({
               "border-primary -translate-x-[4px] -translate-y-[4px] bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]",
           )}
         >
-          <Link href={`/${category.slug === "all" ? "" : category.slug}`}>
-            {category.name}
-          </Link>
+          <Link href={`/${category.slug === "all" ? "" : category.slug}`}>{category.name}</Link>
         </Button>
         {category.subcategories && category.subcategories.length > 0 && (
           <div
@@ -70,11 +64,7 @@ export const CategoryDropdown = ({
           />
         )}
       </div>
-      <SubcategoryMenu
-        category={category}
-        isOpen={isOpen}
-        position={dropdownPosition}
-      />
+      <SubcategoryMenu category={category} isOpen={isOpen} position={dropdownPosition} />
     </div>
   );
 };

@@ -23,16 +23,12 @@ export const Categories = ({ data }: CategoriesProps) => {
 
   const activeCategory = "all";
 
-  const activeCategoryIndex = data.findIndex(
-    (cat) => cat.slug === activeCategory,
-  );
-  const isActiveCategoryHidden =
-    activeCategoryIndex >= visibleCount && activeCategoryIndex !== -1;
+  const activeCategoryIndex = data.findIndex((cat) => cat.slug === activeCategory);
+  const isActiveCategoryHidden = activeCategoryIndex >= visibleCount && activeCategoryIndex !== -1;
 
   useEffect(() => {
     const calculateVisible = () => {
-      if (!containerRef.current || !measureRef.current || !viewAllRef.current)
-        return;
+      if (!containerRef.current || !measureRef.current || !viewAllRef.current) return;
 
       const containerWidth = containerRef.current.offsetWidth;
       const viewAllWidth = viewAllRef.current.offsetWidth;
@@ -63,11 +59,7 @@ export const Categories = ({ data }: CategoriesProps) => {
 
   return (
     <div className="reltive w-full">
-      <CategoriesSidebar
-        open={isSidebarOpen}
-        onOpenChange={setIsSidebarOpen}
-        data={data}
-      />
+      <CategoriesSidebar open={isSidebarOpen} onOpenChange={setIsSidebarOpen} data={data} />
 
       {/* Hidden div to measure all times */}
       <div
@@ -106,9 +98,7 @@ export const Categories = ({ data }: CategoriesProps) => {
           <Button
             className={cn(
               "hover:border-primary h-11 rounded-full border-transparent bg-transparent px-4 text-black hover:bg-white",
-              isActiveCategoryHidden &&
-                !isAnyHovered &&
-                "border-primary bg-white",
+              isActiveCategoryHidden && !isAnyHovered && "border-primary bg-white",
             )}
             onClick={() => setIsSidebarOpen(true)}
           >

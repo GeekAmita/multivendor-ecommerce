@@ -5,11 +5,13 @@ This is a multi-vendor e-commerce platform built with Next.js and TypeScript.
 ### Getting Started
 
 1. Install dependencies:
+
 ```bash
 bun install
 ```
 
 2. Run the development server:
+
 ```bash
 bun run dev
 ```

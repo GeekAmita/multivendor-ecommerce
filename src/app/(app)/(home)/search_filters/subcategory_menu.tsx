@@ -8,26 +8,15 @@ interface SubcategoryMenuProps {
   position: { top: number; left: number };
 }
 
-export const SubcategoryMenu = ({
-  category,
-  isOpen,
-  position,
-}: SubcategoryMenuProps) => {
-  if (
-    !isOpen ||
-    !category.subcategories ||
-    category.subcategories.length === 0
-  ) {
+export const SubcategoryMenu = ({ category, isOpen, position }: SubcategoryMenuProps) => {
+  if (!isOpen || !category.subcategories || category.subcategories.length === 0) {
     return null;
   }
 
   const backgroundColor = category.color || "#F5F5F5";
 
   return (
-    <div
-      className="fixed z-100"
-      style={{ top: position.top, left: position.left }}
-    >
+    <div className="fixed z-100" style={{ top: position.top, left: position.left }}>
       <div className="h-3 w-60" />
       <div
         style={{ backgroundColor }}

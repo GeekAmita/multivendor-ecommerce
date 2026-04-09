@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { CustomCategory } from "../types";
 import { useState } from "react";
@@ -18,18 +13,11 @@ interface CategoriesSidebarProps {
   data: CustomCategory[]; //TODO: Remove this later
 }
 
-export const CategoriesSidebar = ({
-  open,
-  onOpenChange,
-  data,
-}: CategoriesSidebarProps) => {
+export const CategoriesSidebar = ({ open, onOpenChange, data }: CategoriesSidebarProps) => {
   const router = useRouter();
 
-  const [parentCategories, setParentCategories] = useState<
-    CustomCategory[] | null
-  >(null);
-  const [selectedCategory, setSelectedCategory] =
-    useState<CustomCategory | null>(null);
+  const [parentCategories, setParentCategories] = useState<CustomCategory[] | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<CustomCategory | null>(null);
 
   // If we have parent categories show those otherwise show root categories
   const currentCategories = parentCategories ?? data ?? [];
@@ -72,11 +60,7 @@ export const CategoriesSidebar = ({
 
   return (
     <Sheet open={open} onOpenChange={handleOpenChange}>
-      <SheetContent
-        side="left"
-        className="p-0 transition-none"
-        style={{ backgroundColor }}
-      >
+      <SheetContent side="left" className="p-0 transition-none" style={{ backgroundColor }}>
         <SheetHeader className="border-b p-4">
           <SheetTitle>Categories</SheetTitle>
         </SheetHeader>
@@ -97,9 +81,7 @@ export const CategoriesSidebar = ({
               className="flex w-full cursor-pointer items-center justify-between p-4 text-left text-base font-medium hover:bg-black hover:text-white"
             >
               {category.name}
-              {category.subcategories && category.subcategories.length > 0 && (
-                <ChevronRightIcon className="size-4" />
-              )}
+              {category.subcategories && category.subcategories.length > 0 && <ChevronRightIcon className="size-4" />}
             </button>
           ))}
         </ScrollArea>
