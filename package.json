@@ -10,6 +10,7 @@
     "lint": "next lint",
     "generate:types": "payload generate:types",
     "db:fresh": "payload migrate:fresh",
+    "db:seed": "bun run src/seed.ts",
     "format": "prettier --write ."
   },
   "dependencies": {
